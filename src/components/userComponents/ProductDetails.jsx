@@ -7,7 +7,7 @@ import { useNavigate, useParams } from "react-router-dom";
 import { useAddCartMutation, useAddWishlistMutation, useGetProductDetailsQuery } from "../../services/userApi";
 import { useEffect, useState } from "react";
 import BreadCrumbs from '../BreadCrumbs';
-import ReactImageMagnify from 'react-image-magnify';
+// import ReactImageMagnify from 'react-image-magnify';
 import { toast } from 'sonner';
 import { useSelector } from 'react-redux';
 
@@ -125,7 +125,7 @@ const ProductDetails = () => {
         <div className="relative w-full max-w-sm mx-auto"> 
           <div className=" relative w-96 h-96 mx-auto overflow-hidden  rounded-lg flex items-center justify-center">
          
-            <ReactImageMagnify
+            {/* <ReactImageMagnify
                   {...{
                     smallImage: {
                       alt: 'Wristwatch by Ted Baker London',
@@ -142,7 +142,7 @@ const ProductDetails = () => {
                   enlargedImagePosition: 'beside',
                   enlargedImagePortalId:'portalId', 
                   }}
-              />
+              /> */}
           </div>
           <button
             onClick={handlePrevImage}
