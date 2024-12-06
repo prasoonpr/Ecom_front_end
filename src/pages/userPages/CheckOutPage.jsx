@@ -437,7 +437,7 @@ const CheckOutPage = () => {
                     />
                     <input
                       onChange={handleForm}
-                      type="text"
+                      type="number"
                       name="phone"
                       value={form.phone}
                       className="p-3 border-2 focus:outline-none focus:border-blue-500 flex-grow h-12 placeholder:text-sm "
@@ -447,7 +447,7 @@ const CheckOutPage = () => {
                   <div className="flex justify-start gap-4 my-4 w-[600px]">
                     <input
                       onChange={handleForm}
-                      type="text"
+                      type="number"
                       name="pincode"
                       value={form.pincode}
                       className="p-3 border-2 focus:outline-none focus:border-blue-500 flex-grow h-12 placeholder:text-sm "
@@ -499,7 +499,7 @@ const CheckOutPage = () => {
                     />
                     <input
                       onChange={handleForm}
-                      type="text"
+                      type="number"
                       name="alternativePhone"
                       value={form.alternativePhone}
                       className="p-3 border-2 focus:outline-none focus:border-blue-500 flex-grow h-12 placeholder:text-sm "
