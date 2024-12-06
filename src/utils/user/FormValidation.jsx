@@ -37,10 +37,10 @@ export const validateRegisterForm = input => {
     if(input.name.trim()==''){
       return false
     }
-    if(input.phone==''){
+    if(input.phone==''||isNaN(input.phone)){
       return false
     }
-    if(input.pincode==''){
+    if(input.pincode==''||isNaN(input.phone)){
       return false
     }
     if(input.locality.trim()==''){
@@ -53,6 +53,9 @@ export const validateRegisterForm = input => {
       return false
     }
     if(input.state.trim()==''){
+      return false
+    }
+    if(input.alternativePhone==''||isNaN(input.alternativePhone)){
       return false
     }
     return true
