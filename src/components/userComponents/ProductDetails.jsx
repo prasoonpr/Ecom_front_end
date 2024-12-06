@@ -10,6 +10,7 @@ import BreadCrumbs from '../BreadCrumbs';
 // import ReactImageMagnify from 'react-image-magnify';
 import { toast } from 'sonner';
 import { useSelector } from 'react-redux';
+import ImageZoomModal from './modals/ImageZoomModal';
 
 const ProductDetails = () => {
   const navigate=useNavigate()
@@ -27,6 +28,7 @@ const ProductDetails = () => {
   const [isCart,setIsCart]=useState(false)
   const [isWishlist,SetIsWishlist]=useState(false)
   const [currenImageIndex,setCurrentImageIndex]=useState(0)
+  const [isOpen,setIsOpen]=useState(false)
   // const [isChatOpen, setIsChatOpen] = useState(false);
   // const [message, setMessage] = useState('');
   // const [chatMessages, setChatMessages] = useState([]);
@@ -99,6 +101,10 @@ const ProductDetails = () => {
     }
   }
 
+  const closeModal=()=>{
+    setIsOpen(false)
+  }
+
   // const toggleChat = () => {
   //   setIsChatOpen(!isChatOpen);
   // };
@@ -125,24 +131,13 @@ const ProductDetails = () => {
         <div className="relative w-full max-w-sm mx-auto"> 
           <div className=" relative w-96 h-96 mx-auto overflow-hidden  rounded-lg flex items-center justify-center">
          
-            {/* <ReactImageMagnify
-                  {...{
-                    smallImage: {
-                      alt: 'Wristwatch by Ted Baker London',
-                      isFluidWidth: true,
-                      src:product.images?.[currenImageIndex]
-
-                  },
-                  largeImage: {
-                    src:product.images?.[currenImageIndex],
-                      width: 1800,
-                      height: 1800
-                  },
-                  enlargedImageContainerDimensions: { width: '150%', height: '150%' },
-                  enlargedImagePosition: 'beside',
-                  enlargedImagePortalId:'portalId', 
-                  }}
-              /> */}
+            
+              <img onClick={()=>setIsOpen(true)} width='300px' height="100px" src={product.images?.[currenImageIndex]} alt="" />
+              <ImageZoomModal
+                isOpen={isOpen}
+                onRequestClose={closeModal}
+                selectedImage={product.images?.[currenImageIndex]}
+              />
           </div>
           <button
             onClick={handlePrevImage}
