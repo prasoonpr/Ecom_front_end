@@ -1,7 +1,7 @@
 import {  fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 
 const baseQuery = fetchBaseQuery({
-  baseUrl: "https://gemasdelujoserver.prasoonpr.tech/api",
+  baseUrl: "https://ecom-backend-25d6.onrender.com/api",
   // baseUrl: "http://localhost:4000/api",
   credentials: 'include',
   prepareHeaders: (headers, { extraOptions }) => {
